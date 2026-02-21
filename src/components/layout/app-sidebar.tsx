@@ -22,49 +22,38 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 const navigation = [
-  {
-    title: "Studio",
-    href: "/studio",
-    icon: Mic,
-  },
-  {
-    title: "Voice Cloning",
-    href: "/voice-cloning",
-    icon: Copy,
-  },
-  {
-    title: "Voice Design",
-    href: "/voice-design",
-    icon: Wand2,
-  },
-  {
-    title: "Dialogue",
-    href: "/dialogue",
-    icon: MessageSquare,
-  },
-  {
-    title: "Voice Library",
-    href: "/voice-library",
-    icon: Library,
-  },
-  {
-    title: "History",
-    href: "/history",
-    icon: Clock,
-  },
+  { title: "Studio", href: "/studio", icon: Mic },
+  { title: "Voice Cloning", href: "/voice-cloning", icon: Copy },
+  { title: "Voice Design", href: "/voice-design", icon: Wand2 },
+  { title: "Dialogue", href: "/dialogue", icon: MessageSquare },
+  { title: "Voice Library", href: "/voice-library", icon: Library },
+  { title: "History", href: "/history", icon: Clock },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
+  const { isMobile, setOpenMobile } = useSidebar();
+
+  const handleNavClick = () => {
+    // Close sidebar on mobile after navigation
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
 
   return (
     <Sidebar className="border-r border-white/10 bg-sidebar dark:bg-black/50">
       <SidebarHeader className="border-b border-white/10 p-4">
-        <Link href="/studio" className="flex items-center space-x-3">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-lg gradient-primary shadow-lg">
+        <Link
+          href="/studio"
+          className="flex items-center space-x-3"
+          onClick={handleNavClick}
+        >
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 shadow-lg">
             <AudioWaveform className="h-6 w-6 text-white" />
           </div>
           <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
@@ -86,9 +75,9 @@ export function AppSidebar() {
                     isActive && "bg-white/10 dark:bg-white/10"
                   )}
                 >
-                  <Link href={item.href}>
+                  <Link href={item.href} onClick={handleNavClick}>
                     {isActive && (
-                      <div className="absolute left-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-r-full gradient-primary" />
+                      <div className="absolute left-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-r-full bg-gradient-to-b from-violet-600 to-blue-600" />
                     )}
                     <item.icon
                       className={cn(
