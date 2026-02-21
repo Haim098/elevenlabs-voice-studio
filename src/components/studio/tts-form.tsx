@@ -176,16 +176,23 @@ Try adding emotion tags like:
         </div>
       </div>
 
+      {/* Validation hint */}
+      {!selectedVoiceId && text.trim() && (
+        <p className="text-xs text-amber-400">
+          Please select a voice above to enable generation
+        </p>
+      )}
+
       <Button
         onClick={handleSubmit}
         disabled={
           isGenerating || !text.trim() || !selectedVoiceId || voicesLoading
         }
         className={cn(
-          "w-full bg-gradient-to-r from-violet-600 to-blue-600",
-          "hover:from-violet-700 hover:to-blue-700",
-          "text-white font-medium h-12",
-          "disabled:opacity-50 disabled:cursor-not-allowed",
+          "w-full font-medium h-12",
+          isGenerating || !text.trim() || !selectedVoiceId || voicesLoading
+            ? "bg-gray-700 text-gray-400 cursor-not-allowed opacity-60"
+            : "bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white",
           isGenerating && "animate-pulse"
         )}
       >
