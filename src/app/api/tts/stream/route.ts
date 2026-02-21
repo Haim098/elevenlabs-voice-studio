@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
       stability = 0.5,
       similarityBoost = 0.75,
       style = 0,
+      speed = 1,
       useSpeakerBoost = true,
     } = body;
 
@@ -26,6 +27,7 @@ export async function POST(request: NextRequest) {
         similarityBoost,
         style,
         useSpeakerBoost,
+        speed,
       },
     });
 

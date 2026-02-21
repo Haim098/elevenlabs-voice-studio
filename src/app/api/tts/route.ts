@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
       stability,
       similarityBoost,
       style,
+      speed,
       useSpeakerBoost,
     } = ttsRequestSchema.parse(body);
 
@@ -27,6 +28,7 @@ export async function POST(request: NextRequest) {
         similarityBoost,
         style,
         useSpeakerBoost,
+        speed,
       },
     });
 
