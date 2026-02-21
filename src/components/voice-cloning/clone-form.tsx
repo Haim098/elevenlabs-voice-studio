@@ -41,12 +41,13 @@ export function CloneForm({ className }: CloneFormProps) {
       return
     }
 
+    toast.info(`Cloning voice "${voiceName}" with ${files.length} sample(s)...`)
+
     clone(
       { name: voiceName, files },
       {
-        onSuccess: (data) => {
+        onSuccess: () => {
           toast.success(`Voice "${voiceName}" cloned successfully!`)
-          // Refresh the voices list so the new voice appears everywhere
           refetchVoices()
         },
         onError: (error) => {

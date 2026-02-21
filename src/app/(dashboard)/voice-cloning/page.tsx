@@ -16,7 +16,7 @@ export default function VoiceCloningPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-violet-500 to-blue-500 rounded-full filter blur-3xl opacity-20" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-8 max-w-3xl">
+      <div className="relative z-10 container mx-auto px-4 py-6 md:py-8 max-w-3xl pb-32">
         <div className="mb-8">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
             Voice Cloning
@@ -26,7 +26,7 @@ export default function VoiceCloningPage() {
           </p>
         </div>
 
-        <div className="rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 dark:bg-white/5 dark:border-white/10 p-8">
+        <div className="rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 dark:bg-white/5 dark:border-white/10 p-4 md:p-8">
           {/* How it works */}
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-3">How it works</h2>

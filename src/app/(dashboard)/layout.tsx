@@ -22,7 +22,7 @@ export default function DashboardLayout({
           <Header />
           <main
             className={`flex-1 overflow-auto ${
-              currentTrack ? "pb-20" : ""
+              currentTrack ? "pb-24" : "pb-4"
             }`}
           >
             {children}
