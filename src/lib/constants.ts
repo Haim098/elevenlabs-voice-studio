@@ -1,7 +1,7 @@
 export const MODELS = [
   {
     id: "eleven_v3",
-    name: "ElevenLabs v3",
+    name: "AI Voice Studio v3",
     description: "Latest, most expressive model",
   },
   {

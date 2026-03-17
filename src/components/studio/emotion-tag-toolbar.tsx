@@ -196,7 +196,7 @@ export function EmotionTagToolbar({
         <Info className="w-3 h-3" />
         <span>
           Click a tag to insert it before selected text. Works best with{" "}
-          <span className="text-violet-400">ElevenLabs v3</span> model.
+          <span className="text-violet-400">AI Voice Studio v3</span> model.
         </span>
       </div>
     </div>

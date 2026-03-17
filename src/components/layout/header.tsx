@@ -15,6 +15,7 @@ const pageTitles: Record<string, string> = {
   "/dialogue": "Dialogue",
   "/voice-library": "Voice Library",
   "/history": "History",
+  "/about": "About",
 };
 
 export function Header() {
@@ -26,7 +27,7 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  const pageTitle = pageTitles[pathname] || "ElevenLabs";
+  const pageTitle = pageTitles[pathname] || "AI Voice Studio";
 
   return (
     <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/40 bg-background/95 px-4 md:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">

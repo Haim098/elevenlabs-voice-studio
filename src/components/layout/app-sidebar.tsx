@@ -10,6 +10,7 @@ import {
   MessageSquare,
   Library,
   Clock,
+  Info,
   AudioWaveform,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -32,6 +33,7 @@ const navigation = [
   { title: "Dialogue", href: "/dialogue", icon: MessageSquare },
   { title: "Voice Library", href: "/voice-library", icon: Library },
   { title: "History", href: "/history", icon: Clock },
+  { title: "About", href: "/about", icon: Info },
 ];
 
 export function AppSidebar() {
@@ -57,7 +59,7 @@ export function AppSidebar() {
             <AudioWaveform className="h-6 w-6 text-white" />
           </div>
           <span className="text-xl font-bold bg-gradient-to-r from-violet-600 to-blue-600 bg-clip-text text-transparent">
-            ElevenLabs
+            AI Voice Studio
           </span>
         </Link>
       </SidebarHeader>

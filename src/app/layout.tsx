@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { Providers } from "@/components/providers";
+import { Footer } from "@/components/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ElevenLabs Voice Studio",
-  description: "AI Voice Generation & Cloning",
+  title: "AI Voice Studio - Text to Speech & Voice Cloning",
+  description:
+    "AI Voice Studio is a startup building AI-powered voice generation tools including text-to-speech, voice cloning, and voice design.",
 };
 
 export default function RootLayout({
@@ -27,10 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}
       >
         <Providers>
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <div className="flex-1 min-h-0">{children}</div>
+            <Footer />
+          </div>
           <Toaster
             position="bottom-right"
             toastOptions={{
